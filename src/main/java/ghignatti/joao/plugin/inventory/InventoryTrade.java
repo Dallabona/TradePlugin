@@ -1,6 +1,6 @@
 package ghignatti.joao.plugin.inventory;
 
-import ghignatti.joao.plugin.array.SetArray;
+import ghignatti.joao.plugin.array.ArrayTrade;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -9,12 +9,12 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class SetInventory {
+public class InventoryTrade {
 
-    private SetArray setArray = SetArray.getInstance();
+    private ArrayTrade arrayTrade = ArrayTrade.getInstance();
 
-    private Player sender = setArray.arrayList.get(setArray.arrayList.size()-1).getSender();
-    private Player target = setArray.arrayList.get(setArray.arrayList.size()-1).getTarget();
+    private Player sender = arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getSender();
+    private Player target = arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getTarget();
 
     private Inventory setSenderInventory() {
 

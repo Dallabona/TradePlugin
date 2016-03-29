@@ -2,14 +2,14 @@ package ghignatti.joao.plugin.array;
 
 import java.util.ArrayList;
 
-public class SetArray {
-    private static SetArray ourInstance = new SetArray();
+public class ArrayTrade {
+    private static ArrayTrade ourInstance = new ArrayTrade();
 
-    public static SetArray getInstance() {
+    public static ArrayTrade getInstance() {
         return ourInstance;
     }
 
-    private SetArray() {
+    private ArrayTrade() {
     }
 
     public ArrayList<TradeRequisition> arrayList = new ArrayList<TradeRequisition>();

@@ -1,6 +1,6 @@
 package ghignatti.joao.plugin.commands;
 
-import ghignatti.joao.plugin.array.SetArray;
+import ghignatti.joao.plugin.array.ArrayTrade;
 import ghignatti.joao.plugin.array.TradeRequisition;
 
 import org.bukkit.Bukkit;
@@ -50,9 +50,9 @@ public class TradeCommand implements CommandExecutor {
                 ChatColor.AQUA + " para aceitar e " + ChatColor.DARK_AQUA + "/tdecline" +
                 ChatColor.AQUA + " para declinar oferta.");
 
-        SetArray setArray = SetArray.getInstance();
+        ArrayTrade arrayTrade = ArrayTrade.getInstance();
 
-        setArray.arrayList.add(new TradeRequisition(player, target));
+        arrayTrade.arrayList.add(new TradeRequisition(player, target));
 
         return true;
     }

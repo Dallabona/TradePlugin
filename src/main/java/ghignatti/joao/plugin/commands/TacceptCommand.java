@@ -1,8 +1,8 @@
 package ghignatti.joao.plugin.commands;
 
-import ghignatti.joao.plugin.array.SetArray;
+import ghignatti.joao.plugin.array.ArrayTrade;
 
-import ghignatti.joao.plugin.inventory.SetInventory;
+import ghignatti.joao.plugin.inventory.InventoryTrade;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -22,9 +22,9 @@ public class TacceptCommand implements CommandExecutor {
             return false;
         }
 
-        SetArray setArray = SetArray.getInstance();
+        ArrayTrade arrayTrade = ArrayTrade.getInstance();
 
-        if(!(sender.equals(setArray.arrayList.get(setArray.arrayList.size()-1).getTarget()))) {
+        if(!(sender.equals(arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getTarget()))) {
             sender.sendMessage(ChatColor.RED + "Você não foi solicitado a fazer nenhuma troca.");
             return false;
         }
@@ -32,7 +32,7 @@ public class TacceptCommand implements CommandExecutor {
         Player target = (Player) sender;
 
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (p.equals(setArray.arrayList.get(setArray.arrayList.size()-1).getSender())) {
+            if (p.equals(arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getSender())) {
                 player = p;
                 break;
             }
@@ -45,10 +45,10 @@ public class TacceptCommand implements CommandExecutor {
 
         player.sendMessage(ChatColor.GREEN + target.getName() + " aceitou sua solicitação de troca.");
         target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
-
-        SetInventory setInventory = new SetInventory();
-        Inventory senderInv = setInventory.getSenderInventory();
-        Inventory targetInv = setInventory.getTargetInventory();
+        // Trading
+        InventoryTrade inventoryTrade = new InventoryTrade();
+        Inventory senderInv = inventoryTrade.getSenderInventory();
+        Inventory targetInv = inventoryTrade.getTargetInventory();
 
         player.openInventory(senderInv);
         target.openInventory(targetInv);
