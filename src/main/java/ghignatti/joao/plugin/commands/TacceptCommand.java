@@ -22,19 +22,15 @@ public class TacceptCommand implements CommandExecutor {
 
         SetArray setArray = SetArray.getInstance();
 
-        Player targetAux = setArray.arrayList.get(setArray.arrayList.size()-1).getTarget();
-
-        if(!(sender.equals(targetAux))) {
+        if(!(sender.equals(setArray.arrayList.get(setArray.arrayList.size()-1).getTarget()))) {
             sender.sendMessage(ChatColor.RED + "Você não foi solicitado a fazer nenhuma troca.");
             return false;
         }
 
         Player target = (Player) sender;
 
-        Player playerAux = setArray.arrayList.get(setArray.arrayList.size()-1).getSender();
-
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (p.equals(playerAux)) {
+            if (p.equals(setArray.arrayList.get(setArray.arrayList.size()-1).getSender())) {
                 player = p;
                 break;
             }
