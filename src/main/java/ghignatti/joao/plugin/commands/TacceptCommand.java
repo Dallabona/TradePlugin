@@ -2,12 +2,14 @@ package ghignatti.joao.plugin.commands;
 
 import ghignatti.joao.plugin.array.SetArray;
 
+import ghignatti.joao.plugin.inventory.SetInventory;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.Inventory;
 
 public class TacceptCommand implements CommandExecutor {
 
@@ -43,6 +45,13 @@ public class TacceptCommand implements CommandExecutor {
 
         player.sendMessage(ChatColor.GREEN + target.getName() + " aceitou sua solicitação de troca.");
         target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
+
+        SetInventory setInventory = new SetInventory();
+        Inventory senderInv = setInventory.getSenderInventory();
+        Inventory targetInv = setInventory.getTargetInventory();
+
+        player.openInventory(senderInv);
+        target.openInventory(targetInv);
 
         return true;
     }
