@@ -22,15 +22,19 @@ public class TacceptCommand implements CommandExecutor {
 
         SetArray setArray = SetArray.getInstance();
 
-        if(!(sender.equals(setArray.arrayList.get(setArray.arrayList.lastIndexOf(setArray.arrayList)).getTarget()))) {
+        Player targetAux = setArray.arrayList.get(setArray.arrayList.size()-1).getTarget();
+
+        if(!(sender.equals(targetAux))) {
             sender.sendMessage(ChatColor.RED + "Você não foi solicitado a fazer nenhuma troca.");
             return false;
         }
 
         Player target = (Player) sender;
 
+        Player playerAux = setArray.arrayList.get(setArray.arrayList.size()-1).getSender();
+
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (p.equals(setArray.arrayList.get(setArray.arrayList.lastIndexOf(setArray.arrayList)).getSender())) {
+            if (p.equals(playerAux)) {
                 player = p;
                 break;
             }
@@ -44,6 +48,6 @@ public class TacceptCommand implements CommandExecutor {
         player.sendMessage(ChatColor.GREEN + target.getName() + " aceitou sua solicitação de troca.");
         target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
 
-        return false;
+        return true;
     }
 }
