@@ -12,5 +12,5 @@ public class SetArray {
     private SetArray() {
     }
 
-    public ArrayList<TradeRequisition> arrayList;
+    public ArrayList<TradeRequisition> arrayList = new ArrayList<TradeRequisition>();
 }
