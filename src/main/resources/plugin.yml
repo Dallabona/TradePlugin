@@ -1,0 +1,13 @@
+name: Trade
+version: 1.0-SNAPSHOT
+main: ghignatti.joao.plugin.main.Main
+author: João Ghignatti
+description: Troca itens entre dois players.
+
+commands:
+  trade:
+    usage: /<command> <player>
+    description: Solicita troca com o player especificado.
+  taccept:
+    usage: /<command>
+    description: Aceita troca solicitada.
