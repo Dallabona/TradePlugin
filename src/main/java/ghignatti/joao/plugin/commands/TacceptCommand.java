@@ -30,7 +30,7 @@ public class TacceptCommand implements CommandExecutor {
         Player target = (Player) sender;
 
         for (Player p : Bukkit.getOnlinePlayers()) {
-            if (p.equals(setArray.arrayList.get(setArray.arrayList.lastIndexOf(setArray.arrayList)).getTarget())) {
+            if (p.equals(setArray.arrayList.get(setArray.arrayList.lastIndexOf(setArray.arrayList)).getSender())) {
                 player = p;
                 break;
             }
