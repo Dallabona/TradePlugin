@@ -3,6 +3,7 @@ package ghignatti.joao.plugin.commands;
 import ghignatti.joao.plugin.array.ArrayTrade;
 import ghignatti.joao.plugin.array.TradeRequisition;
 
+import ghignatti.joao.plugin.utilities.ForPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -14,7 +15,7 @@ public class TradeCommand implements CommandExecutor {
 
     public boolean onCommand(CommandSender sender, Command cnd, String commandLabel, String[] args) {
 
-        Player target = null;
+        Player target;
 
         if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "Você precisa ser um player para chamar este comando.");
@@ -28,12 +29,8 @@ public class TradeCommand implements CommandExecutor {
             return false;
         }
 
-        for (Player p : Bukkit.getOnlinePlayers()) {
-            if (args[0].equals(p.getName())) {
-                target = p;
-                break;
-            }
-        }
+        ForPlayer fp = ForPlayer.getOurInstance();
+        target = fp.searchPlayer(args[0]);
 
         if (target == null) {
             player.sendMessage(ChatColor.RED + "Player não encontrado. Somente players online podem fazer troca.");

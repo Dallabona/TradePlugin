@@ -4,22 +4,22 @@ import org.bukkit.entity.Player;
 
 public class TradeRequisition {
 
-    private Player sender;
-    private Player target;
+    private String sender;
+    private String target;
 
-    public void setSender(Player player) {
-        this.sender = player;
+    private void setSender(Player player) {
+        this.sender = player.getName();
     }
 
-    public Player getSender() {
+    public String getSender() {
         return sender;
     }
 
-    public void setTarget(Player player) {
-        this.target = player;
+    private void setTarget(Player player) {
+        this.target = player.getName();
     }
 
-    public Player getTarget() {
+    public String getTarget() {
         return target;
     }
 
