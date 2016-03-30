@@ -22,7 +22,9 @@ public class SearchTradeUp {
 
         for(i = arrayTrade.arrayList.size()-1; i<0; i--) {
 
-            if(t.getName().equals(arrayTrade.arrayList.get(i).getTarget())){
+            Player target = ForOnlinePlayer.getOurInstance().searchPlayer(arrayTrade.arrayList.get(i).getTarget());
+
+            if(t.equals(target)){
 
                 if(arrayTrade.arrayList.get(i).getRequestTime() + 30000 >= System.currentTimeMillis()) {
 
@@ -33,13 +35,16 @@ public class SearchTradeUp {
                             return true;
                         }
                         else {
-
                             t.sendMessage(ChatColor.RED + "O player que solicitou a troca não está mais online.");
                             return false;
                         }
                     }
+                    else {
+                        t.sendMessage(ChatColor.RED + "O tempo de aceitar solicitação expirou.");
+                        return false;
+                    }
                 } else {
-                    t.sendMessage(ChatColor.RED + "Tempo limite estourado.");
+                    t.sendMessage(ChatColor.RED + "Tempo limite expirado.");
                     t.sendMessage(ChatColor.RED + "Solicite nova troca.");
 
                     arrayTrade.arrayList.get(i).setStatus(false);
