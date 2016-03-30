@@ -11,3 +11,9 @@ commands:
   taccept:
     usage: /<command>
     description: Aceita troca solicitada.
+  tdecline:
+    usage: /<command>
+    description: Nega a solicitação de troca.
+  tignore:
+    usage: /<command> <player>
+    description: Ignora solicitações de troca do player especificado.
