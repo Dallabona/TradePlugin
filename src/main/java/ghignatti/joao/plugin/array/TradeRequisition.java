@@ -27,7 +27,7 @@ public class TradeRequisition {
         return target;
     }
 
-    private void setStatus(boolean status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -43,8 +43,10 @@ public class TradeRequisition {
         return requestTime;
     }
 
-    public TradeRequisition(Player sender, Player target) {
+    public TradeRequisition(Player sender, Player target, boolean status) {
         setSender(sender);
         setTarget(target);
+        setStatus(status);
+        setRequestTime();
     }
 }

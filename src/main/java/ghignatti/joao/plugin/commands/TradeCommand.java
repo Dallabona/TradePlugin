@@ -3,8 +3,7 @@ package ghignatti.joao.plugin.commands;
 import ghignatti.joao.plugin.array.ArrayTrade;
 import ghignatti.joao.plugin.array.TradeRequisition;
 
-import ghignatti.joao.plugin.utilities.ForPlayer;
-import org.bukkit.Bukkit;
+import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -29,7 +28,7 @@ public class TradeCommand implements CommandExecutor {
             return false;
         }
 
-        ForPlayer fp = ForPlayer.getOurInstance();
+        ForOnlinePlayer fp = ForOnlinePlayer.getOurInstance();
         target = fp.searchPlayer(args[0]);
 
         if (target == null) {
@@ -49,7 +48,7 @@ public class TradeCommand implements CommandExecutor {
 
         ArrayTrade arrayTrade = ArrayTrade.getInstance();
 
-        arrayTrade.arrayList.add(new TradeRequisition(player, target));
+        arrayTrade.arrayList.add(new TradeRequisition(player, target, true));
 
         return true;
     }

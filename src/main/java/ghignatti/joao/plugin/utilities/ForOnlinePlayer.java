@@ -3,16 +3,15 @@ package ghignatti.joao.plugin.utilities;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class ForPlayer {
+public class ForOnlinePlayer {
 
-    private static ForPlayer ourInstance = new ForPlayer();
+    private static ForOnlinePlayer ourInstance = new ForOnlinePlayer();
 
-    public static ForPlayer getOurInstance() {
+    public static ForOnlinePlayer getOurInstance() {
         return ourInstance;
     }
 
-    private ForPlayer() {
-
+    private ForOnlinePlayer() {
     }
 
     public Player searchPlayer(String namePlayer) {

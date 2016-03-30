@@ -1,7 +1,9 @@
 package ghignatti.joao.plugin.inventory;
 
 import ghignatti.joao.plugin.array.ArrayTrade;
-import ghignatti.joao.plugin.utilities.ForPlayer;
+import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
+
+import ghignatti.joao.plugin.utilities.SearchTradeUp;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -14,10 +16,10 @@ public class InventoryTrade {
 
     private ArrayTrade arrayTrade = ArrayTrade.getInstance();
 
-    private String senderName = arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getSender();
-    private String targetName = arrayTrade.arrayList.get(arrayTrade.arrayList.size()-1).getTarget();
+    private String senderName = arrayTrade.arrayList.get(SearchTradeUp.getInstance().index()).getSender();
+    private String targetName = arrayTrade.arrayList.get(SearchTradeUp.getInstance().index()).getTarget();
 
-    private ForPlayer fp = ForPlayer.getOurInstance();
+    private ForOnlinePlayer fp = ForOnlinePlayer.getOurInstance();
 
     private Player sender = fp.searchPlayer(senderName);
     private Player target = fp.searchPlayer(targetName);
