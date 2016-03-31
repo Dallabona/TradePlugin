@@ -2,8 +2,8 @@ package ghignatti.joao.plugin.inventory;
 
 import ghignatti.joao.plugin.array.ArrayTrade;
 import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
-
 import ghignatti.joao.plugin.utilities.SearchTradeUp;
+
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -30,7 +30,7 @@ public class InventoryTrade {
 
         ItemStack botaoVerde = nameItem(Material.EMERALD_BLOCK, ChatColor.GREEN + "Aceitar");
         ItemStack botaoVermelho = nameItem(Material.REDSTONE_BLOCK, ChatColor.RED + "Recusar");
-        ItemStack botaoOutro = nameItem(Material.STONE, ChatColor.BLUE + target.getName() + " escolha");
+        ItemStack botaoPedra = nameItem(Material.STONE, ChatColor.BLUE + target.getName() + " escolha");
 
         ItemStack barreira = nameItem(Material.IRON_FENCE, "");
 
@@ -42,7 +42,7 @@ public class InventoryTrade {
         inv.setItem(29, botaoVerde);
         inv.setItem(30, botaoVermelho);
 
-        inv.setItem(32, botaoOutro);
+        inv.setItem(32, botaoPedra);
 
         return inv;
     }
@@ -53,7 +53,7 @@ public class InventoryTrade {
 
         ItemStack botaoVerde = nameItem(Material.EMERALD_BLOCK, ChatColor.GREEN + "Aceitar");
         ItemStack botaoVermelho = nameItem(Material.REDSTONE_BLOCK, ChatColor.RED + "Recusar");
-        ItemStack botaoOutro = nameItem(Material.STONE, ChatColor.GREEN + sender.getName() + " escolha");
+        ItemStack botaoPedra = nameItem(Material.STONE, ChatColor.GREEN + sender.getName() + " escolha");
 
         ItemStack barreira = nameItem(Material.IRON_FENCE, "");
 
@@ -65,7 +65,7 @@ public class InventoryTrade {
         inv.setItem(33, botaoVerde);
         inv.setItem(32, botaoVermelho);
 
-        inv.setItem(30, botaoOutro);
+        inv.setItem(30, botaoPedra);
 
         return inv;
     }

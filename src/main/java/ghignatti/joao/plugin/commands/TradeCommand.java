@@ -2,8 +2,8 @@ package ghignatti.joao.plugin.commands;
 
 import ghignatti.joao.plugin.array.ArrayTrade;
 import ghignatti.joao.plugin.array.TradeRequisition;
-
 import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -2,7 +2,6 @@ package ghignatti.joao.plugin.commands;
 
 import ghignatti.joao.plugin.action.Trading;
 import ghignatti.joao.plugin.array.ArrayTrade;
-
 import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
 import ghignatti.joao.plugin.utilities.SearchTradeUp;
 
@@ -38,7 +37,7 @@ public class TacceptCommand implements CommandExecutor {
             target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
 
             Trading trading = new Trading(player, target);
-            trading.setTrade();
+            trading.setInventoryTrade();
 
         } else {
             return false;

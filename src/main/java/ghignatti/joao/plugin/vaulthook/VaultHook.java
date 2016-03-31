@@ -1,6 +1,7 @@
 package ghignatti.joao.plugin.vaulthook;
 
 import net.milkbowl.vault.economy.Economy;
+
 import org.bukkit.Server;
 import org.bukkit.plugin.RegisteredServiceProvider;
 

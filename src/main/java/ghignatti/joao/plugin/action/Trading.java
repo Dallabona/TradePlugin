@@ -15,7 +15,7 @@ public class Trading {
         this.target = target;
     }
 
-    public void setTrade() {
+    public void setInventoryTrade() {
 
         InventoryTrade inventoryTrade = new InventoryTrade();
         Inventory senderInv = inventoryTrade.getSenderInventory();
