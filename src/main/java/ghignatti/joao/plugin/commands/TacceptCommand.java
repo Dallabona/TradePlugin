@@ -32,7 +32,7 @@ public class TacceptCommand implements CommandExecutor {
 
             int index = SearchTradeUp.getInstance().index();
 
-            Player player = ForOnlinePlayer.getOurInstance().searchPlayer(arrayTrade.arrayList.get(index).getSender());
+            Player player = fp.searchPlayer(arrayTrade.arrayList.get(index).getSender());
 
             player.sendMessage(ChatColor.GREEN + target.getName() + " aceitou sua solicitação de troca.");
             target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
