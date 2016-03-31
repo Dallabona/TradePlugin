@@ -37,7 +37,8 @@ public class TacceptCommand implements CommandExecutor {
             player.sendMessage(ChatColor.GREEN + target.getName() + " aceitou sua solicitação de troca.");
             target.sendMessage(ChatColor.GREEN + "Você aceitou a solicitação de troca de " + player.getName() + ".");
 
-            new Trading(player, target);
+            Trading trading = new Trading(player, target);
+            trading.setTrade();
 
         } else {
             return false;
