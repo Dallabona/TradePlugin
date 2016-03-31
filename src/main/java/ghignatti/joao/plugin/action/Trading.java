@@ -15,6 +15,10 @@ public class Trading {
         this.target = target;
     }
 
+    public Trading() {
+
+    }
+
     public void setInventoryTrade() {
 
         InventoryTrade inventoryTrade = new InventoryTrade();
@@ -23,5 +27,13 @@ public class Trading {
 
         player.openInventory(senderInv);
         target.openInventory(targetInv);
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Player getTarget() {
+        return target;
     }
 }
