@@ -24,8 +24,6 @@ public class SearchTradeUp {
 
         for(i = arrayTrade.arrayList.size()-1; i>=0; i--) {
 
-            t.sendMessage("111111");
-
             Player target = fp.searchPlayer(arrayTrade.arrayList.get(i).getTarget());
 
             if(t.equals(target)) {
