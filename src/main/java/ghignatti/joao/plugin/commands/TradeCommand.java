@@ -1,6 +1,6 @@
 package ghignatti.joao.plugin.commands;
 
-import ghignatti.joao.plugin.array.ArrayTrade;
+import ghignatti.joao.plugin.array.ArrayRequisition;
 import ghignatti.joao.plugin.array.TradeRequisition;
 import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
 
@@ -46,9 +46,9 @@ public class TradeCommand implements CommandExecutor {
                 ChatColor.AQUA + " para aceitar e " + ChatColor.DARK_AQUA + "/tdecline" +
                 ChatColor.AQUA + " para declinar oferta.");
 
-        ArrayTrade arrayTrade = ArrayTrade.getInstance();
+        ArrayRequisition arrayRequisition = ArrayRequisition.getInstance();
 
-        arrayTrade.arrayList.add(new TradeRequisition(player, target, true));
+        arrayRequisition.requisitionArray.add(new TradeRequisition(player, target, true));
 
         return true;
     }

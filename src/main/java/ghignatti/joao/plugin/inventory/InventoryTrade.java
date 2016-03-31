@@ -1,6 +1,6 @@
 package ghignatti.joao.plugin.inventory;
 
-import ghignatti.joao.plugin.array.ArrayTrade;
+import ghignatti.joao.plugin.array.ArrayRequisition;
 import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
 import ghignatti.joao.plugin.utilities.SearchTradeUp;
 
@@ -14,10 +14,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class InventoryTrade {
 
-    private ArrayTrade arrayTrade = ArrayTrade.getInstance();
+    private ArrayRequisition arrayRequisition = ArrayRequisition.getInstance();
 
-    private String senderName = arrayTrade.arrayList.get(SearchTradeUp.getInstance().index()).getSender();
-    private String targetName = arrayTrade.arrayList.get(SearchTradeUp.getInstance().index()).getTarget();
+    private String senderName = arrayRequisition.requisitionArray.get(SearchTradeUp.getInstance().index()).getSender();
+    private String targetName = arrayRequisition.requisitionArray.get(SearchTradeUp.getInstance().index()).getTarget();
 
     private ForOnlinePlayer fp = ForOnlinePlayer.getOurInstance();
 

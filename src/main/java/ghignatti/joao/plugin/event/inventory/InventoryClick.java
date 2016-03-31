@@ -1,7 +1,6 @@
 package ghignatti.joao.plugin.event.inventory;
 
-import ghignatti.joao.plugin.action.Trading;
-import ghignatti.joao.plugin.inventory.InventoryTrade;
+import ghignatti.joao.plugin.array.HashMapTrading;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,22 +14,19 @@ public class InventoryClick implements Listener {
     @EventHandler
     public void onInventoryCLick(InventoryClickEvent event) {
 
-        Trading trading = new Trading();
+        HashMapTrading hmt = HashMapTrading.getInstance();
 
-        Player s = trading.getPlayer();
-        Player t = trading.getTarget();
+        Player s = hmt.tradingHashMap.get(event.getWhoClicked()).getPlayer();
+        Player t = hmt.tradingHashMap.get(event.getWhoClicked()).getTarget();
 
-        if(event.getInventory().equals(s.getInventory()) ||
-                event.getInventory().equals(t.getInventory())) {
+        if(!(event.getInventory().equals(s.getInventory()) ||
+                event.getInventory().equals(t.getInventory()))) {
 
-            ItemStack eb = new ItemStack(Material.EMERALD_BLOCK);
-            ItemStack rb = new ItemStack(Material.REDSTONE_BLOCK);
-            ItemStack ifn = new ItemStack(Material.IRON_FENCE);
-            ItemStack st = new ItemStack(Material.STONE);
+            event.getWhoClicked().sendMessage("LLLLLL");
 
-            ItemStack ci = event.getCurrentItem();
+            String ci = event.getCurrentItem().getItemMeta().getDisplayName();
 
-            if(ci.equals(eb) || ci.equals(rb) || ci.equals(ifn) || ci.equals(st)) {
+            if (ci.equals("Aceitar") && event.getCurrentItem().getType().equals(Material.EMERALD_BLOCK)) {
                 event.setCancelled(true);
             }
         }
