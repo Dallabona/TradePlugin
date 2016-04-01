@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class InventoryClick implements Listener {
 
@@ -22,11 +21,8 @@ public class InventoryClick implements Listener {
         if(!(event.getInventory().equals(s.getInventory()) ||
                 event.getInventory().equals(t.getInventory()))) {
 
-            event.getWhoClicked().sendMessage("LLLLLL");
-
-            String ci = event.getCurrentItem().getItemMeta().getDisplayName();
-
-            if (ci.equals("Aceitar") && event.getCurrentItem().getType().equals(Material.EMERALD_BLOCK)) {
+            if(((event.getCurrentItem().getType() == Material.EMERALD_BLOCK) &&
+                    event.getCurrentItem().getType().getData().getName().equals("Aceitar"))) {
                 event.setCancelled(true);
             }
         }

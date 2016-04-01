@@ -55,7 +55,7 @@ public class InventoryTrade {
         ItemStack botaoVermelho = nameItem(Material.REDSTONE_BLOCK, ChatColor.RED + "Recusar");
         ItemStack botaoPedra = nameItem(Material.STONE, ChatColor.BLUE + sender.getName() + " escolha");
 
-        ItemStack barreira = nameItem(Material.IRON_FENCE, "");
+        ItemStack barreira = nameItem(Material.IRON_FENCE, "Barreira");
 
         inv.setItem(4, barreira);
         inv.setItem(13, barreira);
