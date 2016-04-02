@@ -2,8 +2,8 @@ package ghignatti.joao.plugin.commands;
 
 import ghignatti.joao.plugin.array.ArrayRequisition;
 import ghignatti.joao.plugin.array.TradeRequisition;
-import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -28,8 +28,7 @@ public class TradeCommand implements CommandExecutor {
             return false;
         }
 
-        ForOnlinePlayer fp = ForOnlinePlayer.getOurInstance();
-        target = fp.searchPlayer(args[0]);
+        target = Bukkit.getPlayer(args[0]);
 
         if (target == null) {
             player.sendMessage(ChatColor.RED + "Player não encontrado. Somente players online podem fazer troca.");

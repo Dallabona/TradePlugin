@@ -1,25 +1,25 @@
 package ghignatti.joao.plugin.action;
 
-import ghignatti.joao.plugin.inventory.InventoryTrade;
+import ghignatti.joao.plugin.inventory.InventoryTradeSetter;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 
-public class Trading {
+public class InstructionsOfTrading {
 
     private Player player;
     private Player target;
 
-    public Trading(Player player, Player target) {
+    public InstructionsOfTrading(Player player, Player target) {
         this.player = player;
         this.target = target;
     }
 
     public void setInventoryTrade() {
 
-        InventoryTrade inventoryTrade = new InventoryTrade();
-        Inventory senderInv = inventoryTrade.getSenderInventory();
-        Inventory targetInv = inventoryTrade.getTargetInventory();
+        InventoryTradeSetter inventoryTradeSetter = new InventoryTradeSetter();
+        Inventory senderInv = inventoryTradeSetter.getSenderInventory();
+        Inventory targetInv = inventoryTradeSetter.getTargetInventory();
 
         player.openInventory(senderInv);
         target.openInventory(targetInv);

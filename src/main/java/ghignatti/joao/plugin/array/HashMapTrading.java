@@ -1,6 +1,6 @@
 package ghignatti.joao.plugin.array;
 
-import ghignatti.joao.plugin.action.Trading;
+import ghignatti.joao.plugin.action.InstructionsOfTrading;
 
 import org.bukkit.entity.Player;
 
@@ -16,5 +16,5 @@ public class HashMapTrading {
     private HashMapTrading() {
     }
 
-    public HashMap<Player, Trading> tradingHashMap = new HashMap<Player, Trading>();
+    public HashMap<Player, InstructionsOfTrading> tradingHashMap = new HashMap<Player, InstructionsOfTrading>();
 }

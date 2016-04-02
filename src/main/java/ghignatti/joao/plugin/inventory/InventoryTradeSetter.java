@@ -1,8 +1,7 @@
 package ghignatti.joao.plugin.inventory;
 
 import ghignatti.joao.plugin.array.ArrayRequisition;
-import ghignatti.joao.plugin.utilities.ForOnlinePlayer;
-import ghignatti.joao.plugin.utilities.SearchTradeUp;
+import ghignatti.joao.plugin.utilities.TradeUpVerifier;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,17 +11,15 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-public class InventoryTrade {
+public class InventoryTradeSetter {
 
     private ArrayRequisition arrayRequisition = ArrayRequisition.getInstance();
 
-    private String senderName = arrayRequisition.requisitionArray.get(SearchTradeUp.getInstance().index()).getSender();
-    private String targetName = arrayRequisition.requisitionArray.get(SearchTradeUp.getInstance().index()).getTarget();
+    private String senderName = arrayRequisition.requisitionArray.get(TradeUpVerifier.getInstance().index()).getSender();
+    private String targetName = arrayRequisition.requisitionArray.get(TradeUpVerifier.getInstance().index()).getTarget();
 
-    private ForOnlinePlayer fp = ForOnlinePlayer.getOurInstance();
-
-    private Player sender = fp.searchPlayer(senderName);
-    private Player target = fp.searchPlayer(targetName);
+    private Player sender = Bukkit.getPlayer(senderName);
+    private Player target = Bukkit.getPlayer(targetName);
 
     private Inventory setSenderInventory() {
 
